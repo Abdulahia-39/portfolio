@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Contact() {
   return (
-    <section className="py-32 px-6 relative overflow-hidden">
+    <section id="contact" className="py-32 px-6 relative overflow-hidden">
       <div className="max-w-6xl mx-auto text-center">
         {/* Animated Subheading */}
         <motion.p
@@ -38,15 +39,12 @@ export default function Contact() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          <a
-            href="mailto:your@email.com"
-            className="inline-block relative group"
-          >
+          <Link href="/contact" className="inline-block relative group">
             <div className="absolute inset-0 bg-blue-600 rounded-full blur-2xl opacity-20 group-hover:opacity-50 transition-opacity duration-500" />
-            <button className="relative px-12 py-6 bg-zinc-900 dark:bg-white text-white dark:text-black rounded-full text-xl font-bold transition-transform duration-300 group-hover:scale-105 active:scale-95">
+            <span className="relative inline-flex items-center justify-center px-12 py-6 bg-zinc-900 dark:bg-white text-white dark:text-black rounded-full text-xl font-bold transition-transform duration-300 group-hover:scale-105 active:scale-95">
               Get in Touch
-            </button>
-          </a>
+            </span>
+          </Link>
         </motion.div>
 
         {/* Minimal Social Links */}

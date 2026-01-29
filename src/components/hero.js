@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Github, Twitter } from "lucide-react";
 import Image from "next/image";
 import profile from "@/assets/profile_card.jpg";
+import Link from "next/link";
 
 export default function Hero() {
   const containerVariants = {
@@ -101,9 +102,12 @@ export default function Hero() {
           variants={itemVariants}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
         >
-          <button className="w-full sm:w-auto px-8 py-4 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-black rounded-xl font-semibold flex items-center justify-center gap-2 transition-all hover:scale-105 hover:shadow-xl active:scale-95">
+          <Link
+            href="/work"
+            className="w-full sm:w-auto px-8 py-4 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-black rounded-xl font-semibold flex items-center justify-center gap-2 transition-all hover:scale-105 hover:shadow-xl active:scale-95"
+          >
             View My Work <ArrowRight size={18} />
-          </button>
+          </Link>
 
           <div className="flex items-center gap-3">
             <button className="p-4 rounded-xl border border-black/10 dark:border-white/10 text-zinc-900 dark:text-zinc-100 hover:bg-gray-50 dark:hover:bg-zinc-900 transition-colors">

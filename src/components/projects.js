@@ -1,37 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-const projects = [
-  {
-    id: 1,
-    title: "AI Dashboard",
-    category: "Web App",
-    size: "md:col-span-2",
-    color: "from-blue-500/20",
-  },
-  {
-    id: 2,
-    title: "Nova E-com",
-    category: "Mobile",
-    size: "md:col-span-1",
-    color: "from-purple-500/20",
-  },
-  {
-    id: 3,
-    title: "Zenith OS",
-    category: "UI/UX",
-    size: "md:col-span-1",
-    color: "from-orange-500/20",
-  },
-  {
-    id: 4,
-    title: "Fluid Motion",
-    category: "Animation",
-    size: "md:col-span-2",
-    color: "from-emerald-500/20",
-  },
-];
+import { projects } from "@/data/projects";
+
+const MotionLink = motion(Link);
 
 export default function ProjectGrid() {
   return (
@@ -62,7 +36,8 @@ export default function ProjectGrid() {
 
 function ProjectCard({ project }) {
   return (
-    <motion.div
+    <MotionLink
+      href={`/work/${project.slug}`}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -104,6 +79,6 @@ function ProjectCard({ project }) {
         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
         className="absolute -right-10 -top-10 w-40 h-40 bg-blue-500/10 rounded-full blur-[80px] group-hover:bg-blue-500/30 transition-colors"
       />
-    </motion.div>
+    </MotionLink>
   );
 }
