@@ -32,8 +32,8 @@ export default function Experience() {
               The tools & <br /> experience.
             </h2>
             <p className="mt-6 text-zinc-500 dark:text-zinc-400 leading-relaxed">
-              I specialize in building modular, scalable, and highly animated
-              web applications that focus on user experience.
+              I specialize in building modular, scalable, and highly secure web
+              and mobile applications that focus on user experience.
             </p>
           </div>
         </div>

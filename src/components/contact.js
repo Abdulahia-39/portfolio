@@ -49,14 +49,20 @@ export default function Contact() {
 
         {/* Minimal Social Links */}
         <div className="mt-24 flex justify-center gap-8 text-zinc-500 font-medium mx-10">
-          {["LinkedIn", "GitHub", "Twitter", "Instagram"].map((link) => (
-            <a
-              key={link}
-              href="#"
+          {[
+            {
+              social: "LinkedIn",
+              url: "https://www.linkedin.com/in/abdilahi-a-1303a224b/",
+            },
+            { social: "GitHub", url: "https://github.com/Abdulahia-39" },
+          ].map((link) => (
+            <Link
+              key={link.social}
+              href={link.url}
               className="hover:text-blue-600 dark:hover:text-white transition-colors"
             >
-              {link}
-            </a>
+              {link.social}
+            </Link>
           ))}
         </div>
       </div>

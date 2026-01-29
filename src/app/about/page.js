@@ -16,10 +16,9 @@ export default function AboutPage() {
             Building thoughtful products with intent.
           </h1>
           <p className="text-lg text-zinc-600 dark:text-zinc-400">
-            I am a fullstack developer focused on performant, animated
-            interfaces and reliable backends. I love collaborating with teams
-            that care about design systems, accessibility, and measurable
-            impact.
+            I am a fullstack developer focused on performant interfaces and
+            reliable backends. I love collaborating with teams that care about
+            design systems, accessibility, and measurable impact.
           </p>
         </div>
       </section>
