@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Twitter } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
 import profile from "@/assets/profile_card.jpg";
 import Link from "next/link";
@@ -110,12 +110,18 @@ export default function Hero() {
           </Link>
 
           <div className="flex items-center gap-3">
-            <button className="p-4 rounded-xl border border-black/10 dark:border-white/10 text-zinc-900 dark:text-zinc-100 hover:bg-gray-50 dark:hover:bg-zinc-900 transition-colors">
+            <Link
+              href="https://github.com/Abdulahia-39"
+              className="p-4 rounded-xl border border-black/10 dark:border-white/10 text-zinc-900 dark:text-zinc-100 hover:bg-gray-50 dark:hover:bg-zinc-900 transition-colors"
+            >
               <Github size={20} />
-            </button>
-            <button className="p-4 rounded-xl border border-black/10 dark:border-white/10 text-zinc-900 dark:text-zinc-100 hover:bg-gray-50 dark:hover:bg-zinc-900 transition-colors">
-              <Twitter size={20} />
-            </button>
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/abdilahi-a-1303a224b/"
+              className="p-4 rounded-xl border border-black/10 dark:border-white/10 text-zinc-900 dark:text-zinc-100 hover:bg-gray-50 dark:hover:bg-zinc-900 transition-colors"
+            >
+              <Linkedin size={20} />
+            </Link>
           </div>
         </motion.div>
       </motion.div>

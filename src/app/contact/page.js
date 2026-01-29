@@ -105,7 +105,7 @@ export default function ContactPage() {
                   href="mailto:hello@example.com"
                   className="text-lg font-semibold dark:text-white hover:text-blue-600 dark:hover:text-blue-400"
                 >
-                  hello@example.com
+                  abdilahi1055@gmail.com
                 </a>
               </div>
               <div>
@@ -113,7 +113,15 @@ export default function ContactPage() {
                   Location
                 </p>
                 <p className="text-lg font-semibold dark:text-white">
-                  Remote / London
+                  Remote / Hargeisa, Somaliland
+                </p>
+              </div>
+              <div>
+                <p className="text-sm uppercase tracking-[0.2em] text-blue-600 mb-1">
+                  Phone
+                </p>
+                <p className="text-lg font-semibold dark:text-white">
+                  +252 63 3981055 / +252 65 3981055
                 </p>
               </div>
               <div>
@@ -130,9 +138,14 @@ export default function ContactPage() {
                 </p>
                 <div className="flex gap-3">
                   {[
-                    { label: "LinkedIn", href: "#" },
-                    { label: "GitHub", href: "#" },
-                    { label: "Twitter", href: "#" },
+                    {
+                      label: "LinkedIn",
+                      href: "https://www.linkedin.com/in/abdilahi-a-1303a224b/",
+                    },
+                    {
+                      label: "GitHub",
+                      href: "https://github.com/Abdulahia-39",
+                    },
                   ].map((item) => (
                     <a
                       key={item.label}
