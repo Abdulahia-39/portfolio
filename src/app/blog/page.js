@@ -2,6 +2,24 @@ import Navbar from "@/components/navbar";
 import Link from "next/link";
 import { posts } from "@/data/blog";
 
+const slugify = (value) =>
+  value
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)+/g, "");
+
+const getPostUrl = (post) =>
+  post.url ?? post.slug ?? (post.id ? String(post.id) : slugify(post.title));
+
+const getPostSummary = (post) => {
+  if (post.summary) return post.summary;
+  const firstParagraph = post.content?.find(
+    (block) => block.type === "paragraph" && block.text,
+  );
+  return firstParagraph?.text ?? "";
+};
+
 export default function BlogPage() {
   return (
     <main className="relative">
@@ -24,21 +42,20 @@ export default function BlogPage() {
 
       <section className="pb-24 px-6">
         <div className="max-w-4xl mx-auto grid gap-6">
-          {posts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="block">
-              <article className="p-6 rounded-2xl border border-black/5 dark:border-white/10 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-sm hover:border-blue-500/30 transition-colors">
-                <p className="text-xs font-mono uppercase tracking-[0.2em] text-blue-600 mb-2">
-                  {post.date}
-                </p>
-                <h2 className="text-2xl font-bold tracking-tight dark:text-white mb-2">
-                  {post.title}
-                </h2>
-                <p className="text-zinc-600 dark:text-zinc-400">
-                  {post.summary}
-                </p>
-              </article>
-            </Link>
-          ))}
+          {posts.map((post) => {
+            const slug = getPostUrl(post);
+            const summary = getPostSummary(post);
+            return (
+              <Link key={post.id} href={`/blog/${slug}`} className="block">
+                <article className="p-6 rounded-2xl border border-black/5 dark:border-white/10 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-sm hover:border-blue-500/30 transition-colors">
+                  <h2 className="text-2xl font-bold tracking-tight dark:text-white mb-2">
+                    {post.title}
+                  </h2>
+                  <p className="text-zinc-600 dark:text-zinc-400">{summary}</p>
+                </article>
+              </Link>
+            );
+          })}
         </div>
       </section>
     </main>
