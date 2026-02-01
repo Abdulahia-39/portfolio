@@ -1,13 +1,13 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useFormStatus } from "react-dom";
 import { useActionState } from "react";
 import { sendContactEmail } from "./actions";
 
 const initialState = { ok: null, message: "" };
 
 function SubmitButton() {
-  const { pending } = useActionState();
+  const { pending } = useFormStatus();
 
   return (
     <button
@@ -21,7 +21,7 @@ function SubmitButton() {
 }
 
 export default function ContactForm() {
-  const [state, formAction] = useFormState(sendContactEmail, initialState);
+  const [state, formAction] = useActionState(sendContactEmail, initialState);
 
   return (
     <form className="space-y-4" action={formAction}>
